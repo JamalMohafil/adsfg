@@ -13,14 +13,15 @@ export async function GET(req: NextRequest) {
   const username = sanitizeValue(searchParams.get("username"));
   const role = searchParams.get("role") as Role;
   const email = searchParams.get("email");
+  const profileId = searchParams.get("profileId");
   const oauthId = searchParams.get("oauthId") as string;
   const image = sanitizeValue(searchParams.get("image"));
 
-  if (!accessToken  || !userId || !role) {
+  if (!accessToken || !userId || !role) {
     throw new Error("Google Auth Failed!");
   }
 
-   await createSession({
+  await createSession({
     user: {
       email: email as string,
       id: userId,
@@ -30,6 +31,7 @@ export async function GET(req: NextRequest) {
       image,
       role,
       oauthId,
+      profileId: profileId ? profileId : "",
     },
     // refreshToken,
     accessToken,
