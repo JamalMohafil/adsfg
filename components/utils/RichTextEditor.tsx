@@ -9,7 +9,7 @@ import Link from "@tiptap/extension-link";
 import Placeholder from "@tiptap/extension-placeholder";
 import TextAlign from "@tiptap/extension-text-align";
 // نستخدم دالة التحقق من نوع التحديد بدلاً من استيراد الكلاس
-
+  
 import {
   Bold,
   Italic,

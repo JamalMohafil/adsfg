@@ -28,6 +28,7 @@ export function ImageLightbox({
   return (
     <>
       {/*  image with max height of 400px */}
+      {/** Imae */}
       <div
         className="group relative cursor-pointer overflow-hidden rounded-xl"
         onClick={openLightbox}
